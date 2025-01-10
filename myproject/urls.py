@@ -24,5 +24,5 @@ urlpatterns = [
     path('', include('my_app.urls')),
 ]
 
-urlpatterns += staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()
 
