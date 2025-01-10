@@ -7,5 +7,6 @@ class FoodItem(models.Model):
     date_added = models.DateField(default=timezone.now)
 
     def __str__(self):
+        
         return f"{self.name} - {self.calories} kcal"
 
