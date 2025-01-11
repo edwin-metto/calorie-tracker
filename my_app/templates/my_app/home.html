@@ -27,7 +27,7 @@
     
     <h2 class="text-xl   text-blue-600">Food Items of today</h2>
     {% if food_items %}
-        <ul class="mt-4 space-y-3">
+        <ul class="mt-4 space-y-4">
             {% for item in food_items %}
                 <li class="bg-gray-100 p-4 rounded  items-center ">
                     <span class="font-medium">{{ item.name }} - {{ item.calories }} Calories</span>
@@ -36,7 +36,7 @@
             {% endfor %}
         </ul>
     {% else %}
-        <p class="mt-4 text-gray-500">No food items today.</p>
+        <p class="mt-4 text-gray-500">No food items today</p>
     {% endif %}
 
     
