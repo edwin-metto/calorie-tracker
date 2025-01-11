@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-i*oc9*6^ur7j0nnpliqd@!m(^6lg+po0rszm$y8yufo&+0@$ud
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR /'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,11 +75,21 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'postgres',  
+         'USER': 'elias61',  
+         'PASSWORD': '123456',  
+         'HOST': 'localhost',  
+         'PORT': '5432', 
+     }
+ }
 
 # 
-DATABASES={
-    'default':dj_database_url.parse("postgresql://django_db_whhp_user:qeRdchcsLynw9HaVgbdlmAp7tL6pIoC8@dpg-ctv0o3l6l47c739qf5o0-a.oregon-postgres.render.com/django_db_whhp")
-}
+# DATABASES={
+#     'default':dj_database_url("")
+# }
 
 
 # Password validation
@@ -114,8 +126,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS=[BASE_DIR / "static"]
+STATIC_URL = '/static/'
+STATICFILES_DIRS =[BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
